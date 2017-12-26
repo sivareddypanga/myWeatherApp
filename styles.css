@@ -1,0 +1,82 @@
+
+body {
+  background: url("imgs/background.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.navbar-for-search{
+    min-height: 100px;
+}
+
+.mybutton, .mysearch, .myselect{
+    background: rgba(39, 95, 200, 0.2);
+    font-weight: bolder;
+
+}
+
+.current-weather{
+    min-height: 100px;
+    border: 1px solid black;
+     background-color: #f1f1f1;
+    border-radius: 4px;
+    box-shadow: 10px 10px 50px #888888;
+    text-align: center;
+    background: rgba(39, 95, 200, 0.2);
+    font-weight: bolder;
+}
+
+.left {
+    float: left;
+
+    width:150px;
+    height:90px;
+    color: black;
+    display: inline-block;
+}
+.temperature {
+    margin-top:2px;
+    font-size:50px;
+}
+
+
+.location {
+    font-size: 18px;
+    width:100%;
+    width:150px;
+    font-style: oblique;
+    text-align: center;
+}
+
+.right {
+    padding: 5px;
+    float: right;
+    width:150px;
+    height:90px;
+    text-align: left;
+    margin-top: 10px;
+    color: black;
+    display: inline-block;
+}
+
+
+.sunrise, .sunset, .humidity, .wind{
+    height: 15px;
+}
+
+.middle{
+    display: inline-block;
+
+}
+.forecast-updates{
+    }
+
+
+.updates-table{
+    text-align: center;
+}
+.updates-table > thead > tr > th{
+    text-align: center;
+    padding: 5px;
+}

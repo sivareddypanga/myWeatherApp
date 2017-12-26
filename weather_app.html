@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather-app</title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link rel = "stylesheet" href = "styles.css">
+    <link type="text/css" rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <link type="text/css" rel="stylesheet" href="jquery-ui/jquery-ui.structure.css">
+    <link type="text/css" rel="stylesheet" href="jquery-ui/jquery-ui.theme.css">
+    <script type="text/javascript" src="weather_app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <br><br><br>
+            <div class = "col-sm-9 col-sm-offset-3">
+                <form class="form-inline ">
+
+                    <div class="form-group">
+                        <div>
+                        <input class="form-control" type="text" placeholder="Enter the place " id = "searchfield"/>
+                        </div>
+                    </div>
+                    <select class = "form-control myselect" id = "option">
+                        <option value = "zipcode">Zip Code</option>
+                        <option value= "cityname">City Name</option>
+                    </select>
+                    <button type= "button" class="btn btn-primary mybutton" onclick="getSelectedValue()">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class = "row">
+            <div class="col-sm-9 col-xs-12 col-sm-offset-1">
+                <div class = "row">
+                    <div class= "col-sm-12">
+                        <h3><b>Current Weather</b></h3>
+                        <div class= "current-weather">
+
+                            <div class="left">
+                                <div class="temperature"><span id="temperature">0</span>&deg;F</div>
+                            <div class="location"><span id="location">Unknown</span></div>
+                            </div>
+                            <div class= "right">
+                                <div class= "sunrise"><p>Sunrise: <span id = "sunrise">00:00</span> </p> </div>
+                                <div class= "sunset"><p>Sunset: <span id = "sunset">00:00</span> </p> </div>
+                                <div class="humidity"><p>Humidity:
+                                    <img src="imgs/humidity.png" height="12px" /><span id="humidity">0</span>%</p>
+	                            </div>
+                                <div class="wind"><p>Wind:
+                                    <span id="wind">0</span> mph <span id="direction">N</span></p>
+                                </div>
+                            </div>
+                            <div class="middle">
+                            <p> <div class="icon"> <img id="icon" height="60px" src="imgs/200.png" /></div>
+                            <div class= "description"><p><span id = "description">Description of the Weather</span></p></div></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class= "col-sm-12">
+                        <div class= "forecast">
+                            <h3><b>Forecast </b></h3>
+                            <div id= "forecast-panel">
+                                <h2>Day1</h2>
+                                <div class= "forecast-updates table-responsive ">
+
+                                    <table class="updates-table table" >
+                                        <thead>
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>Temp</th>
+                                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                            <th>Description</th>
+                                            <th>Wind</th>
+                                        </tr>
+                                        </thead>
+
+                                    </table>
+                                </div>
+                                <h2>Day2</h2>
+                                <div class= "forecast-updates table-responsive">
+                                    <table class="updates-table table">
+                                        <thead>
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>Temp</th>
+                                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                            <th>Description</th>
+                                            <th>Wind</th>
+                                        </tr>
+                                        </thead>
+
+                                    </table>
+                                </div>
+                                <h2>Day3</h2>
+                                <div class= "forecast-updates table-responsive">
+                                    <table class="updates-table table">
+                                        <thead>
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>Temp</th>
+                                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                            <th>Description</th>
+                                            <th>Wind</th>
+                                        </tr>
+                                        </thead>
+
+                                    </table>
+                                </div>
+                                <h2>Day4</h2>
+                                <div class= "forecast-updates  table-responsive">
+                                    <table class="updates-table table">
+                                        <thead>
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>Temp</th>
+                                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                            <th>Description</th>
+                                            <th>Wind</th>
+                                        </tr>
+                                        </thead>
+
+                                    </table>
+                                </div>
+                                <h2>Day5</h2>
+                                <div class= "forecast-updates table-responsive">
+                                    <table class="updates-table table">
+                                        <thead>
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>Temp</th>
+                                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                            <th>Description</th>
+                                            <th>Wind</th>
+                                        </tr>
+                                        </thead>
+
+                                    </table>
+                                </div>
+                            </div>
+
+  </div>
+
+</div>
+
+                        </div>
+                    </div>
+
+        </div>
+    </div>
+<script src = "jquery-3.2.1.js"></script>
+<script src= "jquery-ui/jquery-ui.js"></script>
+<script src = "bootstrap/js/bootstrap.js"></script>
+<script >
+    $(document).ready(function () {
+       $("#forecast-panel").accordion({ autoHeight : true }, {heightStyle : "content"},
+                                        {icons : {'header':"ui-icon-plus",'activeHeader' : "ui-icon-minus"}});
+        $(window).resize(function(){$("#forecast-panel").accordion("refresh");
+            });
+    });
+</script>
+
+</body>
+</html>
